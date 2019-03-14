@@ -16,11 +16,13 @@
    ```
 
 2. Don't use the `with()` statement(不要使用 `with()`)
-   It’s pretty much a fact: the with() statement is pure Javascript evil.
+   It’s pretty much a fact: the with() statement is [pure Javascript evil](http://www.yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
    This is because with() appends an extra set of variables to the beginning of the scope chain described above. This extra item means that anytime any variable is called, the Javascript engine must loop through the with() variables, then the local variables, then the global variables.
    So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
    
 3. Use closures sparingly(谨慎使用闭包)
+   
+
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
 
