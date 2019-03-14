@@ -27,6 +27,10 @@
    But I don’t think Nicholas wants us to throw the baby out with the bathwater. Closures are still useful both for convenience and for making code more readable, just try not to overuse them (especially not in a loop).
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
+   When it comes to Javascript data, there’s pretty much four ways to access it: literal values, variables, object properties, and array items. When thinking about optimization, literal values and variables perform about the same, and are significantly faster than object properties and array items.
+   So whenever you reference an object property or array item multiple times, you can get a performance boost by defining a variable. (This applies to both reading and writing data.)
+   While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
+
 
 5. Don't dig too deep into arrays(不要深层次挖掘数组)
 
