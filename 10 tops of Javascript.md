@@ -122,7 +122,7 @@
 
    var divs = array( document.getElementsByTagName('div') );
 
-   for (var i=0; i < divs.length; i++ ) {
+   for (var i = 0; i < divs.length; i++ ) {
        var div = document.createElement("div"); 
        document.appendChild(div);
    }
