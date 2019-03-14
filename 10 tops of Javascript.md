@@ -21,8 +21,10 @@
    So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
    
 3. Use closures sparingly(谨慎使用闭包)
-   
-
+   [Closures](http://www.jibbering.com/faq/faq_notes/closures.html) are a very powerful and useful aspect of Javascript, but they come with their own performance drawbacks.
+   Although you may not know the term ‘closures’, you probably use them often. Closures can basically be thought of as the new in Javascript, and we use one whenever we define a function on the fly, for instance:
+   The problem with closures is that by definition, they have a minimum of three objects in their scope chain: the closure variables the local variables, and the globals. This extra item leads to all the performance problems we’ve been avoiding in tips #1 & #2.
+   But I don’t think Nicholas wants us to throw the baby out with the bathwater. Closures are still useful both for convenience and for making code more readable, just try not to overuse them (especially not in a loop).
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
 
