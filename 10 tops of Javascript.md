@@ -138,6 +138,7 @@
 
    DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
+10.
 10. Change CSS classes not styles(更改CSS类而不是样式)
    
    You may have heard that changing CSS classes is more optimal than changing styles. This boils down to another reflow issue: whenever a layout style is changed, reflow occurs.
@@ -146,4 +147,4 @@
 
    Now don't get me wrong, CSS classes don't avoid reflow, they simply minimize it. Instead of incurring a reflow penalty every time you change a given style, you can use a CSS class to change a number of styles at once, and in turn only incur a single reflow.
 
-   So it makes performance sense to use CSS classnames whenever changing more than one layout style. Additionally, it's also optimal to [append a style node to the DOM](http://jonraasch.com/blog/javascript-style-node) if you need to define a number of classes on the fly.
+  So it makes performance sense to use CSS classnames whenever changing more than one layout style. Additionally, it's also optimal to [append a style node to the DOM](http://jonraasch.com/blog/javascript-style-node) if you need to define a number of classes on the fly.
