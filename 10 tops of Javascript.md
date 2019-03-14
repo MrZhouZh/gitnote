@@ -45,14 +45,14 @@
 
    Simply put, digging deep into an array is slow because array item lookups are slow. Think about it: if you dig three levels into an array, that’s three array item lookups instead of one.
 
-   So if you constantly reference foo.bar you can get a performance boost by defining var bar = foo.bar;.
+   So if you constantly reference foo.bar you can get a performance boost by defining var bar = foo.bar;
 
 6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
-Here’s another pretty black-and-white performance tip: don’t use for-in loops.
+   Here’s another pretty black-and-white performance tip: don’t use for-in loops.
 
-The logic behind this is pretty straightforward: instead of looping through a set of indexes like you would with a for or a do-while, a for-in not only might loop through additional array items, but also requires more effort.
+   The logic behind this is pretty straightforward: instead of looping through a set of indexes like you would with a for or a do-while, a for-in not only might loop through additional array items, but also requires more effort.
 
-In order to loop through these items, Javascript has to set up a function for each one. This function-based iteration comes with a slew of performance issues: an extra function is introduced with a corresponding execution context that is created and destroyed, on top of which an additional object is added to the scope chain.
+   In order to loop through these items, Javascript has to set up a function for each one. This function-based iteration comes with a slew of performance issues: an extra function is introduced with a corresponding execution context that is created and destroyed, on top of which an additional object is added to the scope chain.
 
 
 7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的改变)
