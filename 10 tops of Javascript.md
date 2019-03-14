@@ -88,7 +88,30 @@ This causes an infinite loop because divs represents a live HTML collection, rat
 
 The way around this is to define these items in an array, which is a little more complex than just setting var divs = document.getElementsByTagName('div');. Here's a script Zakas uses to force an array:
    ```js
-   //
+   function array(items) {
+       try {
+           return Array.prototype.concat.call(items);
+       } catch (ex) {
+        
+        var i = 0,
+            len = items.length,
+            result  = Array(len);
+        
+        while (i < len) {
+            result[i] = items[i];
+            i++;
+        }
+        
+        return result;
+    }
+}
+
+var divs = array( document.getElementsByTagName('div') );
+
+for (var i=0l i < divs.length; i++ ) {
+    var div = document.createElement("div"); 
+    document.appendChild(div);
+}
    ```
 
 9. Stop touching the DOM(禁止操作 `DOM`)
