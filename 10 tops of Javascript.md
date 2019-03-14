@@ -138,7 +138,6 @@
 
    DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
-
 10. Change CSS classes not styles(更改CSS类而不是样式)
    
    You may have heard that changing CSS classes is more optimal than changing styles. This boils down to another reflow issue: whenever a layout style is changed, reflow occurs.
