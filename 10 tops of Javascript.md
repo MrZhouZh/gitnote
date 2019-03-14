@@ -61,15 +61,16 @@
 One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
 
    ```js
-   for() {};
+   for(var x = 0; x < 10; x++) {};
    ```
 Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
 
 However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
    ```js
-   for() {};
+   var x = 9;
+   do { } while( x-- );
    ```
-If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](), which runs through the loop asynchronously (so cool!).
+If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](http://www.nczonline.net/blog/2009/01/13/speed-up-your-javascript-part-1/), which runs through the loop asynchronously (so cool!).
 
 8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
    Javascript uses a number of HTML collection objects such as document.forms. document.images, etc. Additionally these are called by methods such as getElementsByTagName and getElementsByClassName.
@@ -82,7 +83,12 @@ While collection objects look like arrays, they are something quite different: t
 
 HTML collection objects are extremely slow; Nicholas mentioned metrics in the ballpark of 60 times slower for a small operation. Additionally, these collection objects can lead to infinite loops where you might not expect. For instance:
    ```js
-   //
+   var divs = document.getElementsByTagName('div');
+
+   for (var i=0l i < divs.length; i++ ) {
+       var div = document.createElement("div"); 
+       document.appendChild(div);
+   }
    ```
 This causes an infinite loop because divs represents a live HTML collection, rather than an array like you might expect. This live collection is updated every time we append a new <div> to the DOM, so i < divs.length never terminates.
 
