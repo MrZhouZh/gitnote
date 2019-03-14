@@ -1,5 +1,5 @@
 ## 10 Javascript Performance Boosting Tips from Nicholas Zakas
----
+
 1. Define local variables(定义变量)
 
 2. Don't use the `with()` statement(不要使用 `with()`)
