@@ -1,6 +1,6 @@
 ## 10 Javascript Performance Boosting Tips from Nicholas Zakas
 
-1. Define local variables(定义变量)
+1. 1.Define local variables(定义变量)
    
    When a variable is referenced, Javascript hunts it down by looping through the different members of the [scope chain](). This scope chain is the set of variables available within the current scope, and across all major browsers it has at least two items: a set of local variables and a set of global variables.
 
@@ -18,7 +18,7 @@
    blah2 = doc.getElementById('myID2');
    ```
 
-2. Don't use the `with()` statement(不要使用 `with()`)
+2. 2.Don't use the `with()` statement(不要使用 `with()`)
    
    It’s pretty much a fact: the with() statement is [pure Javascript evil](http://www.yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
 
@@ -26,7 +26,7 @@
 
    So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
    
-3. Use closures sparingly(谨慎使用闭包)
+3. 3.Use closures sparingly(谨慎使用闭包)
    
    [Closures](http://www.jibbering.com/faq/faq_notes/closures.html) are a very powerful and useful aspect of Javascript, but they come with their own performance drawbacks.
 
@@ -36,7 +36,7 @@
 
    But I don’t think Nicholas wants us to throw the baby out with the bathwater. Closures are still useful both for convenience and for making code more readable, just try not to overuse them (especially not in a loop).
 
-4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
+4. 4.Object properties and array items are slower than variables(对象属性和数组项比变量慢)
    
    When it comes to Javascript data, there’s pretty much four ways to access it: literal values, variables, object properties, and array items. When thinking about optimization, literal values and variables perform about the same, and are significantly faster than object properties and array items.
 
@@ -44,7 +44,7 @@
 
    While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](http://www.webreference.com/programming/javascript/ncz/column4/), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
 
-5. Don't dig too deep into arrays(不要深层次挖掘数组)
+5. 5.Don't dig too deep into arrays(不要深层次挖掘数组)
    
    Additionally, you should avoid digging too deep into arrays. This is because the deeper you dig, the slower the operation.
 
@@ -52,7 +52,7 @@
 
    So if you constantly reference foo.bar you can get a performance boost by defining var bar = foo.bar;
 
-6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
+6. 6.Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
    
    Here’s another pretty black-and-white performance tip: don’t use for-in loops.
 
@@ -61,7 +61,7 @@
    In order to loop through these items, Javascript has to set up a function for each one. This function-based iteration comes with a slew of performance issues: an extra function is introduced with a corresponding execution context that is created and destroyed, on top of which an additional object is added to the scope chain.
 
 
-7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的改变)
+7. 7.Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的改变)
    
    Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
 
@@ -79,7 +79,7 @@
    ```
    If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](http://www.nczonline.net/blog/2009/01/13/speed-up-your-javascript-part-1/), which runs through the loop asynchronously (so cool!).
 
-8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
+8. 8.Define arrays for HTML collection objects(为HTML集合对象定义数组)
    
    Javascript uses a number of HTML collection objects such as document.forms. document.images, etc. Additionally these are called by methods such as getElementsByTagName and getElementsByClassName.
 
@@ -128,7 +128,7 @@
    }
    ```
 
-9. Stop touching the DOM(禁止操作 `DOM`)
+9. 9.Stop touching the DOM(禁止操作 `DOM`)
    
    Leaving the DOM alone is another big topic in Javascript optimization. The classic example is appending an array of list items: if you append each of these to the DOM individually, it is considerably slower than appending them all at once. This is because DOM operations are expensive.
 
@@ -138,7 +138,7 @@
 
    DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
-10. Change CSS classes not styles(更改CSS类而不是样式) 
+10. 10.Change CSS classes not styles(更改CSS类而不是样式) 
 
     You may have heard that changing CSS classes is more optimal than changing styles. This boils down to another reflow issue: whenever a layout style is changed, reflow occurs.
 
