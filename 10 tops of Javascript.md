@@ -5,10 +5,14 @@
 
    Simply put, the deeper the engine has to dig into this scope chain, the longer the operation will take. It first goes through the local variables starting with this, the function arguments, then any locally defined variables, and afterwards iterates through any global variables.
 
-Since local variables are first in this chain, they’re always faster than globals. So anytime you use a global variable more than once you should redefine it locally, for instance change:
+   Since local variables are first in this chain, they’re always faster than globals. So anytime you use a global variable more than once you should redefine it locally, for instance change:
 
 2. Don't use the `with()` statement(不要使用 `with()`)
+   It’s pretty much a fact: the with() statement is pure Javascript evil.
+   This is because with() appends an extra set of variables to the beginning of the scope chain described above. This extra item means that anytime any variable is called, the Javascript engine must loop through the with() variables, then the local variables, then the global variables.
 
+   So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
+   
 3. Use closures sparingly(谨慎使用闭包)
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
