@@ -93,25 +93,25 @@ The way around this is to define these items in an array, which is a little more
            return Array.prototype.concat.call(items);
        } catch (ex) {
         
-        var i = 0,
-            len = items.length,
-            result  = Array(len);
+            var i = 0,
+                len = items.length,
+                result  = Array(len);
         
-        while (i < len) {
-            result[i] = items[i];
-            i++;
-        }
+            while (i < len) {
+                result[i] = items[i];
+                i++;
+            }
         
-        return result;
-    }
-}
+            return result;
+       }
+   }
 
-var divs = array( document.getElementsByTagName('div') );
+   var divs = array( document.getElementsByTagName('div') );
 
-for (var i=0l i < divs.length; i++ ) {
-    var div = document.createElement("div"); 
-    document.appendChild(div);
-}
+   for (var i=0l i < divs.length; i++ ) {
+       var div = document.createElement("div"); 
+       document.appendChild(div);
+   }
    ```
 
 9. Stop touching the DOM(禁止操作 `DOM`)
