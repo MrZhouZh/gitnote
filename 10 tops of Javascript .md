@@ -12,7 +12,7 @@
 
 6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
 
-7. Combine control conditions and control variable changes when using loops(使用循环时)
+7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的)
 
 8. Define arrays for HTML collection objects
 
