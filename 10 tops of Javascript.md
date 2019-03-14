@@ -2,7 +2,9 @@
 
 1. Define local variables(定义变量)
    When a variable is referenced, Javascript hunts it down by looping through the different members of the [scope chain](). This scope chain is the set of variables available within the current scope, and across all major browsers it has at least two items: a set of local variables and a set of global variables.
+
    Simply put, the deeper the engine has to dig into this scope chain, the longer the operation will take. It first goes through the local variables starting with this, the function arguments, then any locally defined variables, and afterwards iterates through any global variables.
+
    Since local variables are first in this chain, they’re always faster than globals. So anytime you use a global variable more than once you should redefine it locally, for instance change:
    ```js
    var blah = document.getElementById('myID'),
@@ -17,22 +19,33 @@
 
 2. Don't use the `with()` statement(不要使用 `with()`)
    It’s pretty much a fact: the with() statement is [pure Javascript evil](http://www.yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
+
    This is because with() appends an extra set of variables to the beginning of the scope chain described above. This extra item means that anytime any variable is called, the Javascript engine must loop through the with() variables, then the local variables, then the global variables.
+
    So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
    
 3. Use closures sparingly(谨慎使用闭包)
    [Closures](http://www.jibbering.com/faq/faq_notes/closures.html) are a very powerful and useful aspect of Javascript, but they come with their own performance drawbacks.
+
    Although you may not know the term ‘closures’, you probably use them often. Closures can basically be thought of as the new in Javascript, and we use one whenever we define a function on the fly, for instance:
+
    The problem with closures is that by definition, they have a minimum of three objects in their scope chain: the closure variables the local variables, and the globals. This extra item leads to all the performance problems we’ve been avoiding in tips #1 & #2.
+
    But I don’t think Nicholas wants us to throw the baby out with the bathwater. Closures are still useful both for convenience and for making code more readable, just try not to overuse them (especially not in a loop).
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
    When it comes to Javascript data, there’s pretty much four ways to access it: literal values, variables, object properties, and array items. When thinking about optimization, literal values and variables perform about the same, and are significantly faster than object properties and array items.
+
    So whenever you reference an object property or array item multiple times, you can get a performance boost by defining a variable. (This applies to both reading and writing data.)
+
    While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
 
-
 5. Don't dig too deep into arrays(不要深层次挖掘数组)
+   Additionally, you should avoid digging too deep into arrays. This is because the deeper you dig, the slower the operation.
+
+   Simply put, digging deep into an array is slow because array item lookups are slow. Think about it: if you dig three levels into an array, that’s three array item lookups instead of one.
+
+   So if you constantly reference foo.bar you can get a performance boost by defining var bar = foo.bar;.
 
 6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
 
