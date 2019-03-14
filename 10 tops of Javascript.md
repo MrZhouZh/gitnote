@@ -1,6 +1,7 @@
 ## 10 Javascript Performance Boosting Tips from Nicholas Zakas
 
 1. Define local variables(定义变量)
+   
    When a variable is referenced, Javascript hunts it down by looping through the different members of the [scope chain](). This scope chain is the set of variables available within the current scope, and across all major browsers it has at least two items: a set of local variables and a set of global variables.
 
    Simply put, the deeper the engine has to dig into this scope chain, the longer the operation will take. It first goes through the local variables starting with this, the function arguments, then any locally defined variables, and afterwards iterates through any global variables.
@@ -18,6 +19,7 @@
    ```
 
 2. Don't use the `with()` statement(不要使用 `with()`)
+   
    It’s pretty much a fact: the with() statement is [pure Javascript evil](http://www.yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
 
    This is because with() appends an extra set of variables to the beginning of the scope chain described above. This extra item means that anytime any variable is called, the Javascript engine must loop through the with() variables, then the local variables, then the global variables.
@@ -25,6 +27,7 @@
    So with() essentially gives local variables all the performance drawbacks of global ones, and in turn derails Javascript optimization.
    
 3. Use closures sparingly(谨慎使用闭包)
+   
    [Closures](http://www.jibbering.com/faq/faq_notes/closures.html) are a very powerful and useful aspect of Javascript, but they come with their own performance drawbacks.
 
    Although you may not know the term ‘closures’, you probably use them often. Closures can basically be thought of as the new in Javascript, and we use one whenever we define a function on the fly, for instance:
@@ -38,7 +41,7 @@
 
    So whenever you reference an object property or array item multiple times, you can get a performance boost by defining a variable. (This applies to both reading and writing data.)
 
-   While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
+   While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](http://www.webreference.com/programming/javascript/ncz/column4/), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
 
 5. Don't dig too deep into arrays(不要深层次挖掘数组)
    Additionally, you should avoid digging too deep into arrays. This is because the deeper you dig, the slower the operation.
