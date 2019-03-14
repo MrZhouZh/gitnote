@@ -12,10 +12,10 @@
 
 6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
 
-7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的)
+7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的改变)
 
-8. Define arrays for HTML collection objects
+8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
 
-9. Stop touching the DOM
+9. Stop touching the DOM(禁止操作)
 
 10. Change CSS classes not styles
