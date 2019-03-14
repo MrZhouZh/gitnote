@@ -37,6 +37,7 @@
    But I don’t think Nicholas wants us to throw the baby out with the bathwater. Closures are still useful both for convenience and for making code more readable, just try not to overuse them (especially not in a loop).
 
 4. Object properties and array items are slower than variables(对象属性和数组项比变量慢)
+   
    When it comes to Javascript data, there’s pretty much four ways to access it: literal values, variables, object properties, and array items. When thinking about optimization, literal values and variables perform about the same, and are significantly faster than object properties and array items.
 
    So whenever you reference an object property or array item multiple times, you can get a performance boost by defining a variable. (This applies to both reading and writing data.)
@@ -44,6 +45,7 @@
    While this rule holds mostly true, Firefox has done some interesting things to [optimize array indexes](http://www.webreference.com/programming/javascript/ncz/column4/), and actually performs better with array items than with variables. But the performance drawbacks of array items in other browsers mean that you should still avoid array lookups, unless you are really only targeting Firefox performance.
 
 5. Don't dig too deep into arrays(不要深层次挖掘数组)
+   
    Additionally, you should avoid digging too deep into arrays. This is because the deeper you dig, the slower the operation.
 
    Simply put, digging deep into an array is slow because array item lookups are slow. Think about it: if you dig three levels into an array, that’s three array item lookups instead of one.
@@ -51,6 +53,7 @@
    So if you constantly reference foo.bar you can get a performance boost by defining var bar = foo.bar;
 
 6. Avoid `for-in` loops(and function based iteration)(避免使用 `for-in`)
+   
    Here’s another pretty black-and-white performance tip: don’t use for-in loops.
 
    The logic behind this is pretty straightforward: instead of looping through a set of indexes like you would with a for or a do-while, a for-in not only might loop through additional array items, but also requires more effort.
@@ -59,32 +62,34 @@
 
 
 7. Combine control conditions and control variable changes when using loops(使用循环时结合控制条件和控制变量的改变)
+   
    Whenever talking about performance, work avoidance in loops is a hot topic because, quite simply, loops run over and over again. So if there are any performance gains to be had, you will most likely see the largest boosts within your loops.
 
-One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
+   One way to take advantage of this is to combine your control condition and control variable when you define your loop. Here’s an example that doesn’t combine these controls:
 
    ```js
    for(var x = 0; x < 10; x++) {};
    ```
-Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
+   Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
 
-However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
+   However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
    ```js
    var x = 9;
    do { } while( x-- );
    ```
-If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](http://www.nczonline.net/blog/2009/01/13/speed-up-your-javascript-part-1/), which runs through the loop asynchronously (so cool!).
+   If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](http://www.nczonline.net/blog/2009/01/13/speed-up-your-javascript-part-1/), which runs through the loop asynchronously (so cool!).
 
 8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
+   
    Javascript uses a number of HTML collection objects such as document.forms. document.images, etc. Additionally these are called by methods such as getElementsByTagName and getElementsByClassName.
 
-As with any DOM selection, HTML collection objects are pretty slow, but also come with additional problems. As the DOM Level 1 spec says, "collections in the HTML DOM are assumed to be live, meaning that they are automatically updated when the underlying document is changed".
+   As with any DOM selection, HTML collection objects are pretty slow, but also come with additional problems. As the DOM Level 1 spec says, "collections in the HTML DOM are assumed to be live, meaning that they are automatically updated when the underlying document is changed".
 
-This is horrible.
+   This is horrible.
 
-While collection objects look like arrays, they are something quite different: the results of a specific query. Anytime this object is accessed for reading or writing, this query has to be rerun, which includes updating all the peripheral aspects of the object such as its length.
+   While collection objects look like arrays, they are something quite different: the results of a specific query. Anytime this object is accessed for reading or writing, this query has to be rerun, which includes updating all the peripheral aspects of the object such as its length.
 
-HTML collection objects are extremely slow; Nicholas mentioned metrics in the ballpark of 60 times slower for a small operation. Additionally, these collection objects can lead to infinite loops where you might not expect. For instance:
+   HTML collection objects are extremely slow; Nicholas mentioned metrics in the ballpark of 60 times slower for a small operation. Additionally, these collection objects can lead to infinite loops where you might not expect. For instance:
    ```js
    var divs = document.getElementsByTagName('div');
 
@@ -93,9 +98,9 @@ HTML collection objects are extremely slow; Nicholas mentioned metrics in the ba
        document.appendChild(div);
    }
    ```
-This causes an infinite loop because divs represents a live HTML collection, rather than an array like you might expect. This live collection is updated every time we append a new <div> to the DOM, so i < divs.length never terminates.
+   This causes an infinite loop because divs represents a live HTML collection, rather than an array like you might expect. This live collection is updated every time we append a new <div> to the DOM, so i < divs.length never terminates.
 
-The way around this is to define these items in an array, which is a little more complex than just setting var divs = document.getElementsByTagName('div');. Here's a script Zakas uses to force an array:
+   The way around this is to define these items in an array, which is a little more complex than just setting var divs = document.getElementsByTagName('div');. Here's a script Zakas uses to force an array:
    ```js
    function array(items) {
        try {
