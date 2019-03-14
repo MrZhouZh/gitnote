@@ -96,7 +96,7 @@ The way around this is to define these items in an array, which is a little more
 
 Zakas went into great detail on this, explaining that DOM operations are resource-heavy because of [reflow](). Reflow is basically the process by which the browser re-renders the DOM elements on the screen. For instance, if you change the width of a div with Javascript, the browser has to refresh the rendered page to account for this change.
 
-Any time an element is added or removed from the DOM, reflow will occur. The solution for this is a very handy Javascript object, [documentFragment](), which I felt better about not having used after [Steve Souders]() admitted the same.
+Any time an element is added or removed from the DOM, reflow will occur. The solution for this is a very handy Javascript object, [documentFragment](http://ejohn.org/blog/dom-documentfragments/), which I felt better about not having used after [Steve Souders](http://stevesouders.com/) admitted the same.
 
 DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
@@ -108,4 +108,4 @@ Layout styles mean anything that might affect the layout and force the browser t
 
 Now don't get me wrong, CSS classes don't avoid reflow, they simply minimize it. Instead of incurring a reflow penalty every time you change a given style, you can use a CSS class to change a number of styles at once, and in turn only incur a single reflow.
 
-So it makes performance sense to use CSS classnames whenever changing more than one layout style. Additionally, it's also optimal to [append a style node to the DOM if you need to define a number of classes on the fly.
+So it makes performance sense to use CSS classnames whenever changing more than one layout style. Additionally, it's also optimal to [append a style node to the DOM](http://jonraasch.com/blog/javascript-style-node) if you need to define a number of classes on the fly.
