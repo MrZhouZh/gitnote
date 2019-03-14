@@ -1,7 +1,7 @@
 ## 10 Javascript Performance Boosting Tips from Nicholas Zakas
 
 1. Define local variables(定义变量)
-   When a variable is referenced, Javascript hunts it down by looping through the different members of the scope chain. This scope chain is the set of variables available within the current scope, and across all major browsers it has at least two items: a set of local variables and a set of global variables.
+   When a variable is referenced, Javascript hunts it down by looping through the different members of the [scope chain](https://blogs.msdn.microsoft.com/jscript/archive/2007/07/26/scope-chain-of-jscript-functions.aspx). This scope chain is the set of variables available within the current scope, and across all major browsers it has at least two items: a set of local variables and a set of global variables.
    Simply put, the deeper the engine has to dig into this scope chain, the longer the operation will take. It first goes through the local variables starting with this, the function arguments, then any locally defined variables, and afterwards iterates through any global variables.
    Since local variables are first in this chain, they’re always faster than globals. So anytime you use a global variable more than once you should redefine it locally, for instance change:
    ```js
@@ -10,6 +10,9 @@
    ```
    to
    ```js
+   var doc = document,
+   blah = doc.getElementById('myID'),
+   blah2 = doc.getElementById('myID2');
    ```
 
 2. Don't use the `with()` statement(不要使用 `with()`)
