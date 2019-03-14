@@ -16,6 +16,6 @@
 
 8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
 
-9. Stop touching the DOM(禁止操作)
+9. Stop touching the DOM(禁止操作 `DOM`)
 
-10. Change CSS classes not styles
+10. Change CSS classes not styles(更改CSS类而不是样式)
