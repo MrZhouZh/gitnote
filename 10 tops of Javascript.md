@@ -79,7 +79,7 @@
    ```
    If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](http://www.nczonline.net/blog/2009/01/13/speed-up-your-javascript-part-1/), which runs through the loop asynchronously (so cool!).
 
-8. **Define arrays for HTML collection objects(为HTML集合对象定义数组)
+8. **Define arrays for HTML collection objects(为HTML集合对象定义数组)**
    
    Javascript uses a number of HTML collection objects such as document.forms. document.images, etc. Additionally these are called by methods such as getElementsByTagName and getElementsByClassName.
 
@@ -128,7 +128,7 @@
    }
    ```
 
-9. Stop touching the DOM(禁止操作 `DOM`)
+9. **Stop touching the DOM(禁止操作 `DOM`)**
    
    Leaving the DOM alone is another big topic in Javascript optimization. The classic example is appending an array of list items: if you append each of these to the DOM individually, it is considerably slower than appending them all at once. This is because DOM operations are expensive.
 
@@ -138,7 +138,7 @@
 
    DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
-10. Change CSS classes not styles(更改CSS类而不是样式) 
+10. **Change CSS classes not styles(更改CSS类而不是样式)**
 
     You may have heard that changing CSS classes is more optimal than changing styles. This boils down to another reflow issue: whenever a layout style is changed, reflow occurs.
 
