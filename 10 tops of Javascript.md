@@ -130,6 +130,9 @@
 
 9. Stop touching the DOM(禁止操作 `DOM`)
    
+
+10. 
+   
    Leaving the DOM alone is another big topic in Javascript optimization. The classic example is appending an array of list items: if you append each of these to the DOM individually, it is considerably slower than appending them all at once. This is because DOM operations are expensive.
 
    Zakas went into great detail on this, explaining that DOM operations are resource-heavy because of [reflow](). Reflow is basically the process by which the browser re-renders the DOM elements on the screen. For instance, if you change the width of a div with Javascript, the browser has to refresh the rendered page to account for this change.
@@ -138,9 +141,7 @@
 
    DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
 
-10.
 10. Change CSS classes not styles(更改CSS类而不是样式)
-   
    You may have heard that changing CSS classes is more optimal than changing styles. This boils down to another reflow issue: whenever a layout style is changed, reflow occurs.
 
    Layout styles mean anything that might affect the layout and force the browser to reflow. For instance, width, height, font-size, float, etc.
