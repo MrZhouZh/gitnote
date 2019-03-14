@@ -81,9 +81,24 @@ This is horrible.
 While collection objects look like arrays, they are something quite different: the results of a specific query. Anytime this object is accessed for reading or writing, this query has to be rerun, which includes updating all the peripheral aspects of the object such as its length.
 
 HTML collection objects are extremely slow; Nicholas mentioned metrics in the ballpark of 60 times slower for a small operation. Additionally, these collection objects can lead to infinite loops where you might not expect. For instance:
-   
+   ```js
+   //
+   ```
+This causes an infinite loop because divs represents a live HTML collection, rather than an array like you might expect. This live collection is updated every time we append a new <div> to the DOM, so i < divs.length never terminates.
 
+The way around this is to define these items in an array, which is a little more complex than just setting var divs = document.getElementsByTagName('div');. Here's a script Zakas uses to force an array:
+   ```js
+   //
+   ```
 
 9. Stop touching the DOM(禁止操作 `DOM`)
+   Leaving the DOM alone is another big topic in Javascript optimization. The classic example is appending an array of list items: if you append each of these to the DOM individually, it is considerably slower than appending them all at once. This is because DOM operations are expensive.
+
+Zakas went into great detail on this, explaining that DOM operations are resource-heavy because of reflow. Reflow is basically the process by which the browser re-renders the DOM elements on the screen. For instance, if you change the width of a div with Javascript, the browser has to refresh the rendered page to account for this change.
+
+Any time an element is added or removed from the DOM, reflow will occur. The solution for this is a very handy Javascript object, documentFragment, which I felt better about not having used after Steve Souders admitted the same.
+
+DocumentFragment is basically a document-like fragment that isn't visually represented by the browser. Having no visual representation provides a number of advantages; mainly you can append nodes to a documentFragment without incurring any browser reflow.
+
 
 10. Change CSS classes not styles(更改CSS类而不是样式)
