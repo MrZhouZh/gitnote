@@ -66,9 +66,23 @@ One way to take advantage of this is to combine your control condition and contr
 Before we add anything at all to this loop, there are a couple operations that will occur every iteration. The Javascript engine must #1 test if x exists, #2 test if x < 0 and #3 add the increment x++.
 
 However if you're just iterating over some items in an array, you can cut out one of these operations by flipping this iteration around and using a while loop:
-
+   ```js
+   for() {};
+   ```
+If you want to take loop performance to the next level, Zakas also provides a more advanced [loop optimization technique](), which runs through the loop asynchronously (so cool!).
 
 8. Define arrays for HTML collection objects(为HTML集合对象定义数组)
+   Javascript uses a number of HTML collection objects such as document.forms. document.images, etc. Additionally these are called by methods such as getElementsByTagName and getElementsByClassName.
+
+As with any DOM selection, HTML collection objects are pretty slow, but also come with additional problems. As the DOM Level 1 spec says, "collections in the HTML DOM are assumed to be live, meaning that they are automatically updated when the underlying document is changed".
+
+This is horrible.
+
+While collection objects look like arrays, they are something quite different: the results of a specific query. Anytime this object is accessed for reading or writing, this query has to be rerun, which includes updating all the peripheral aspects of the object such as its length.
+
+HTML collection objects are extremely slow; Nicholas mentioned metrics in the ballpark of 60 times slower for a small operation. Additionally, these collection objects can lead to infinite loops where you might not expect. For instance:
+   
+
 
 9. Stop touching the DOM(禁止操作 `DOM`)
 
