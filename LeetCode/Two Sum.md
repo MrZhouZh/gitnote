@@ -45,4 +45,7 @@ var twoSum = function(nums, target) {
 ```
 
 
-### 题解
+### 题解方案
+
+方法一: 暴力法
+暴力法很简单。遍历每个元素 xx，并查找是否存在一个值与 target - xtarget−x 相等的目标元素。
