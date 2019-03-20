@@ -50,7 +50,6 @@ var twoSum = function(nums, target) {
 1. 暴力法
    暴力法很简单。遍历每个元素 xx，并查找是否存在一个值与 target - xtarget−x 相等的目标元素。
    ```java
-   // java
    public int[] twoSum(int[] nums, int target) {
        for (int i = 0; i < nums.length; i++) {
            for (int j = i + 1; j < nums.length; j++) {
@@ -62,6 +61,14 @@ var twoSum = function(nums, target) {
        throw new IllegalArgumentException("No two sum solution");
    }
    ```
+   复杂度分析：
+   时间复杂度：O(n^2)O(n 
+2
+ )， 对于每个元素，我们试图通过遍历数组的其余部分来寻找它所对应的目标元素，这将耗费 O(n)O(n) 的时间。因此时间复杂度为 O(n^2)O(n 
+2
+ )。
+
+空间复杂度：O(1)O(1)。 
 
 2. 两遍哈希表法
    为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。
@@ -71,19 +78,18 @@ var twoSum = function(nums, target) {
    一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target - nums[i]target−nums[i]）是否存在于表中。注意，该目标元素不能是 nums[i]nums[i] 本身！
 
    ```java
-   // java
    public int[] twoSum(int[] nums, int target) {
-    Map<Integer, Integer> map = new HashMap<>();
-    for (int i = 0; i < nums.length; i++) {
-        map.put(nums[i], i);
-    }
-    for (int i = 0; i < nums.length; i++) {
-        int complement = target - nums[i];
-        if (map.containsKey(complement) && map.get(complement) != i) {
-            return new int[] { i, map.get(complement) };
-        }
-    }
-    throw new IllegalArgumentException("No two sum solution");
+       Map<Integer, Integer> map = new HashMap<>();
+       for (int i = 0; i < nums.length; i++) {
+           map.put(nums[i], i);
+       }
+       for (int i = 0; i < nums.length; i++) {
+           int complement = target - nums[i];
+           if (map.containsKey(complement) && map.get(complement) != i) {
+               return new int[] { i, map.get(complement) };
+           }
+       }
+       throw new IllegalArgumentException("No two sum solution");
    }
    ```
 
