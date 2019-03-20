@@ -61,9 +61,9 @@ var twoSum = function(nums, target) {
        throw new IllegalArgumentException("No two sum solution");
    }
    ```
-   复杂度分析：
+   **复杂度分析:**
    - 时间复杂度：O(n^2)O(n2), 对于每个元素, 我们试图通过遍历数组的其余部分来寻找它所对应的目标元素，这将耗费 O(n)O(n) 的时间. 因此时间复杂度为 O(n^2)O(n2)。
-   -空间复杂度：O(1)O(1)。 
+   - 空间复杂度：O(1)O(1)。 
 
 2. 两遍哈希表法
    为了对运行时间复杂度进行优化，我们需要一种更有效的方法来检查数组中是否存在目标元素。如果存在，我们需要找出它的索引。保持数组中的每个元素与其索引相互对应的最好方法是什么？哈希表。
@@ -87,6 +87,8 @@ var twoSum = function(nums, target) {
        throw new IllegalArgumentException("No two sum solution");
    }
    ```
+
+   
 
 3. 一遍哈希表
    事实证明，我们可以一次完成。在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。
