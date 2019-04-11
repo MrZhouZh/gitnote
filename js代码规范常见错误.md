@@ -309,6 +309,9 @@ let handler = {
   default: () => { ... }
 }
 
-handler[a]() || hand
+handler[a]() || handler['default']()
 ```
+
+## 三.尽量使用 ES6, 
+
 
