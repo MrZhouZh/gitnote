@@ -272,5 +272,14 @@ Yes: 使用函数式编程
 let b = a.map(item => ++item)	// 现在javascript中几乎所有的for循环都可以被 map, filter, find, some, any, forEach等函数式编程取代
 ```
 
-()
+(7) 函数中过多使用if...else...
+
+No: if...else...过多
+
+```js
+if(a === 1) {
+  ...
+} else if()
+```
+
 
