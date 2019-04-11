@@ -106,5 +106,9 @@ No: 在不同的文件不停的定义全局变量
 // name.js
 window.name = 'a';
 
-//
+// hello.js
+window.name = 'b';
+
+// time.js
+window.name= 'c'; // 三个文件的加载顺序都会导致输出的结果不同
 ```
