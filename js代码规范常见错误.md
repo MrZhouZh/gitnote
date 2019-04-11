@@ -62,5 +62,9 @@ let users;
 No: 无说明的参数
 
 ```js
-if(value.length < 8) { // 为什么要小于8
+if(value.length < 8) { // 为什么要小于8, 8表示啥??长度还是位移,还是高度?!!!
+  ...
+}
 ```
+
+Yes: 
