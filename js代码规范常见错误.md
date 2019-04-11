@@ -186,7 +186,9 @@ function plusAbc(a, b, c) { // 这个函数的输出将变化无常，因为api�
 Yes: 功能函数使用纯函数，输入一致，输出结果永远唯一
 
 ```js
-function plusAbc(a, b, c) {	// 同样输入函数的a,b
+function plusAbc(a, b, c) {	// 同样输入函数的a,b,c的值, 但函数返回的结果永远相同
   return a + b + c;
 }
 ```
+
+(3)函数传参
