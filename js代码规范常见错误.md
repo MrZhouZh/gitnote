@@ -7,5 +7,12 @@
 NO: 滥用变量:
 
 ```js
-let kpi = 4; // 定义好后一直
+let kpi = 4; // 定义好后一直未用过
+function example() {
+  var a = 1;
+  var b = 2;
+  var c = a + b;
+  var d = c + 1;
+  var e = 
+}
 ```
