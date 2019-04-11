@@ -43,4 +43,11 @@ Yes: 无需对每个变量都写注释, **见名识义**
 let firstName = 'jack';
 ```
 
-No: 
+No: 命名过于啰嗦
+
+```js
+let nameString;
+let theUsers;
+```
+
+Yes:
