@@ -82,5 +82,9 @@ No: 长代码不知道啥意思
 
 ```js
 const address = 'One Infinite Loop, Cupertino 95014';
-const cityZipCodeRegx = /^[^,\]+[,\s]+(.+?)s*(d{5})$/
+const cityZipCodeRegx = /^[^,\]+[,\s]+(.+?)s*(d{5})?$/;
+saveCityZipCode(
+  address.match(cityZipCodeRegx)[1],
+
+)
 ```
