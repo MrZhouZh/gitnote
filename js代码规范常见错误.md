@@ -143,4 +143,14 @@ let a = 2;
 let myName = 'Tiny';
 ```
 
-## 二. 
+## 二. 函数相关
+
+（1）函数命名
+
+No: 从命名无法知道返回值类型
+
+```js
+function showFriendsList(){
+  ...
+}
+```
