@@ -374,4 +374,14 @@ No: 采用传统的函数原型链实现继承
 典型的 ES5 的类(function)在继承,构造和方法定义方面可读性较差, 当需要继承时, 代码太多, 优先使用 class ,就省略了大部分代码.
 ```
 
-Yes: 采用ES6
+Yes: 采用`ES6`类实现继承
+
+```js
+class Animal {
+  constructor(age) {
+    this.age = age
+  }
+  
+  move() {}
+}
+```
