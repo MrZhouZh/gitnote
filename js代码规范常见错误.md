@@ -382,6 +382,14 @@ class Animal {
     this.age = age
   }
   
-  move() {}
+  move() {
+    ...
+  }
+}
+
+class Mammal extend Animal {
+  constructor(age, furColor) {
+    
+  }
 }
 ```
