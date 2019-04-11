@@ -191,4 +191,10 @@ function plusAbc(a, b, c) {	// 同样输入函数的a,b,c的值, 但函数返回
 }
 ```
 
-(3)函数传参
+(3) 函数传参
+
+No: 传参无说明
+
+```js
+page.getSVG(api, true, false);/ true和false啥意思，一目不了然
+```
