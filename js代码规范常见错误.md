@@ -21,5 +21,7 @@ function example() {
 Yes: 数据只是用一次或不适用就无需装到变量中
 
 ```js
-let 
+let kp = 4; // 没用的就删除掉, 不然过三个月子级都不敢删
+function 
+
 ```
