@@ -132,4 +132,5 @@ if(lastName.length > MIN_NAME_LENGTH) {	// 这样你就成功的给自己挖了�
 Yes: 对于求值变量, 做好兜底
 
 ```js
-const 
+const MIN_NAME_LENGTH = 8;
+let lastName = fullName[1] || '';  // 做好兜底, fullName[1]取不到
