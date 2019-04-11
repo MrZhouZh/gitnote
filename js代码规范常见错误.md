@@ -88,3 +88,11 @@ saveCityZipCode(
   address.match(cityZipCodeRegx)[2]
 )
 ```
+
+Yes: 用变量名来解释长代码的含义
+
+```js
+const address = 'One Infinite Loop, Cupertino 95014';
+const cityZipCodeRegx = /^[^,\]+[,\s]+(.+?)s*(d{5})?$/;
+const [, city, zipC]
+```
