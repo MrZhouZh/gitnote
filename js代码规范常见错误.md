@@ -348,7 +348,10 @@ No: 采用传统赋值
 
 ```js
 var data = { name: 'dys', age: 1 };
+var name = data.name;
+var age = data.age;
 
-
+var fullName = ['jack', 'willen'];
+var firstName = full
 ```
 
