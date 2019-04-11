@@ -22,6 +22,11 @@ Yes: 数据只是用一次或不适用就无需装到变量中
 
 ```js
 let kp = 4; // 没用的就删除掉, 不然过三个月子级都不敢删
-function 
-
+function example() {
+  var a = 1;
+  var b = 2;
+  return 2a + b + 1;
+}
 ```
+
+(2)变量的
