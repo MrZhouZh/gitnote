@@ -133,4 +133,5 @@ Yes: 对于求值变量, 做好兜底
 
 ```js
 const MIN_NAME_LENGTH = 8;
-let lastName = fullName[1] || '';  // 做好兜底, fullName[1]取不到时, 不至于赋值个undefined,至少有个空字符,从根本上讲, lastName的类型还是String,String的原型
+let lastName = fullName[1] || '';  // 做好兜底, fullName[1]取不到时, 不至于赋值个undefined,至少有个空字符,从根本上讲, lastName的类型还是String,String的原型链上的特性都能使用不会报错, 也不会变成undefined.
+if(lastName.length > MIN_NAME)
