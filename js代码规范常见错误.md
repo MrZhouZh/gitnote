@@ -4,7 +4,7 @@
 
 (1)变量数量的定义
 
-NO: 滥用变量:
+No: 滥用变量:
 
 ```js
 let kpi = 4; // 定义好后一直未用过
@@ -31,11 +31,16 @@ function example() {
 
 (2)变量的命名
 
-NO: 自我感觉良好的缩写
+No: 自我感觉良好的缩写
 
 ```js
-let fName = 'jac';  // 看起来命名规范, 缩写,驼峰命名, eslint各种检测工具都能通过, 但是fName 是个什么? 这时候你就想说, What are you 弄啥嘞
+let fName = 'jack';  // 看起来命名规范, 缩写,驼峰命名, eslint各种检测工具都能通过, 但是fName 是个什么? 这时候你就想说, What are you 弄啥嘞
 ```
 
 Yes: 无需对每个变量都写注释, **见名识义**
 
+```js
+let firstName = 'jack';
+```
+
+No: 
