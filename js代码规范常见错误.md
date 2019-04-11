@@ -69,3 +69,9 @@ if(value.length < 8) { // 为什么要小于8, 8表示啥??长度还是位移,�
 
 Yes: 添加变量
 
+```js
+const MAX_INPUT_LENGTH = 8;
+if(value.length < MAX_INPUT_LENGTH) {
+  ...
+}
+```
