@@ -245,4 +245,10 @@ function sendEmailToClients(clients) {
 ```
 
 Yes: 功能拆解
+function sendEmailToActiveClients(clients) {
+  clients.filter(isActiveClient).forEach(email);
+}
+function isActiveClient(client) {
 
+
+}
