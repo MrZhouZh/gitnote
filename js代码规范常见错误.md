@@ -352,6 +352,15 @@ var name = data.name;
 var age = data.age;
 
 var fullName = ['jack', 'willen'];
-var firstName = full
+var firstName = fullName[0];
+var lastName = fullName[1];
+```
+
+Yes: 使用解构赋值
+
+```js
+var data = { name: 'dys', age: 1 };
+var [name, age] = data.name;
+var age = data.age;
 ```
 
