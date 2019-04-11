@@ -156,3 +156,20 @@ function showFriendsList(){ // 现在问，你知道这个返回的是一个数�
 ```
 
 Yes: 对于返回true or false的函数，最好以should/is/can/has开头
+
+```js
+functionshouldShowFriendsList() {
+  ...
+}
+function isEmpty() {
+  ...
+}
+function canCreateDocuments()
+ 
+{...}
+function
+ hasLicense
+()
+ 
+{...}
+```
