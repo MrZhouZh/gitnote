@@ -50,4 +50,11 @@ let nameString;
 let theUsers;
 ```
 
-Yes:
+Yes: 做到简洁明了
+
+```js
+let name;
+let users;
+```
+
+(3)特定
