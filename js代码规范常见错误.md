@@ -288,7 +288,7 @@ if(a === 1) {
 }
 ```
 
-Yes: 可以使用 `switch` 替代或用数组替代
+Yes: 可以使用 `switch` 替代或用数组对象替代
 
 ```js
 switch(a) {
@@ -306,7 +306,9 @@ let handler = {
   1: () => { ... }
   2: () => { ... }
   3: () => { ... }
-  default: 
+  default: () => { ... }
+}
 
+handler[a]() || hand
 ```
 
