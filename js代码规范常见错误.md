@@ -78,4 +78,9 @@ if(value.length < MAX_INPUT_LENGTH) {	// 限定最大输入长度
 
 (4)使用说明性的变量(即有意义的变量名)
 
-No: 
+No: 长代码不知道啥意思
+
+```js
+const address = 'One Infinite Loop, Cupertino 95014';
+const 
+```
