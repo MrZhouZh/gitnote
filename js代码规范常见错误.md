@@ -261,7 +261,11 @@ function isActiveClient(client) {
 No: 使用`for`循环编程
 
 ```js
-for(var i = 0; i <= 10; i++) {	// 一看到for循环
+for(var i = 0; i <= 10; i++) {	// 一看到for循环让人顿生不想看的情愫
   a[i] = a[i] + 1;
 }
 ```
+
+Yes: 使用函数式编程
+
+let 
