@@ -298,7 +298,15 @@ switch(a) {
     ...
   case 3:
     ...
-  de
+  default:
+    ...
 }
+// or
+let handler = {
+  1: () => { ... }
+  2: () => { ... }
+  3: () => { ... }
+  default: 
+
 ```
 
