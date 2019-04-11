@@ -279,7 +279,14 @@ No: if...else...过多
 ```js
 if(a === 1) {
   ...
-} else if()
+} else if(a === 2) {
+  ...
+} else if(a === 3) {
+  ...
+} else {
+  ...
+}
 ```
 
+Yes: 可以使用 `switch` 替代
 
