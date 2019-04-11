@@ -98,4 +98,13 @@ const [, city, zipCode] = address.match(cityZipCodeRegx) || [];
 saveCityZipCode(city, zipCode);
 ```
 
-(5) 避免使用太多的
+(5) 避免使用太多的全局变量
+
+No: 在不同的文件不停的定义全局变量
+
+```js
+// name.js
+window.name = 'a';
+
+//
+```
