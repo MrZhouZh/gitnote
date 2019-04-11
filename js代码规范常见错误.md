@@ -336,6 +336,11 @@ No: 采用传统 `+` 号
 var message = 'Hello ' + name + ', it\'s ' + time + ' now.'
 ```
 
-Yes: 
+Yes: 使用模板字符
+
+```js
+let message = `Hello ${name}, it's ${time} now.`
+```
+
 
 
