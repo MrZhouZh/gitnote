@@ -164,12 +164,18 @@ functionshouldShowFriendsList() {
 function isEmpty() {
   ...
 }
-function canCreateDocuments()
- 
-{...}
-function
- hasLicense
-()
- 
-{...}
+function canCreateDocuments() {
+  ...
+}
+function hasLicense() {
+  ...
+}
+```
+
+(2) 功能函数最好为纯函数
+
+No: 不要让功能函数的输出变化无常。
+
+```js
+
 ```
