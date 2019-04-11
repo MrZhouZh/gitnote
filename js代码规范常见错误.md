@@ -142,3 +142,5 @@ let prototypeValue = Object.attr || 0;	// 因为Object.attr有可能为空, 所�
 let a = 2;
 let myName = 'Tiny';
 ```
+
+## 二. 
