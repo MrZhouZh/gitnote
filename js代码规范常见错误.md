@@ -371,5 +371,5 @@ let [firstName, lastName] = fullName;
 No: 采用传统的函数原型链实现继承
 
 ```js
-典型的 ES5
+典型的 ES5 的类(function)在继承,构造和方法定义方面可读性较差, 当需要继承 class 时, 
 ```
