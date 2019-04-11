@@ -31,4 +31,8 @@ function example() {
 
 (2)变量的命名
 
-NO: 自我
+NO: 自我感觉良好的缩写
+
+```js
+let fName = 'jac';  // 
+```
