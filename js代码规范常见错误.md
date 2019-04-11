@@ -150,7 +150,9 @@ let myName = 'Tiny';
 No: 从命名无法知道返回值类型
 
 ```js
-function showFriendsList(){
+function showFriendsList(){ // 现在问，你知道这个返回的是一个数组，还是一个对象，还是true or false。你能答的上来否？你能答得上来我请你吃松鹤楼的满汉全席还请你不要当真。
   ...
 }
 ```
+
+Yes: 对于返回true or false的函数，最好以should/is/can/has开头
