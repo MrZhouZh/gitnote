@@ -237,6 +237,12 @@ No: 函数功能混乱, 一个函数包含多个功能.最后就像能以一当�
 function sendEmailToClients(clients) {
   clients.forEach(client => {
     const clientRecord = database.lookup(client);
+    if(clientRecord.isActive()) {
+      email(client)
+    }
   })
 }
 ```
+
+Yes: 功能拆解
+
