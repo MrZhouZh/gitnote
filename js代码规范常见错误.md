@@ -124,6 +124,6 @@ No: 对于求值获取的变量, 没有兜底.
 ```js
 const MIN_NAME_LENGTH = 8;
 let lastName = fullName[1];
-if(lastName.length > MIN_NAME_LENGTH) {	// 这样你就成功的给自己挖了一个坑,
+if(lastName.length > MIN_NAME_LENGTH) {	// 这样你就成功的给自己挖了一个坑,你有考虑如果fullName = ['jack']这样的情况吗?这种程序一跑起来就要炸~
   ...
 ```
