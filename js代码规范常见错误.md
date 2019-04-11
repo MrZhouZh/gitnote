@@ -94,5 +94,8 @@ Yes: 用变量名来解释长代码的含义
 ```js
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegx = /^[^,\]+[,\s]+(.+?)s*(d{5})?$/;
-const [, city, zipC]
+const [, city, zipCode] = address.match(cityZipCodeRegx) || [];
+saveCityZipCode(city, zipCode);
 ```
+
+(5) 避免使用太多的
