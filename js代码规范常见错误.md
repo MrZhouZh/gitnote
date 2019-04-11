@@ -177,5 +177,19 @@ function hasLicense() {
 No: 不要让功能函数的输出变化无常。
 
 ```js
-
+function
+ plusAbc
+(a, b, c) { // 这个函数的输出将变化无常，因为api返回的值一旦改变，同样输入函数的a，b,c的值，但函数返回的结果却不一定相同。
+  var c = fetch(
+'../api'
+);
+        
+return
+ a
++
+b
++
+c
+;
+}
 ```
