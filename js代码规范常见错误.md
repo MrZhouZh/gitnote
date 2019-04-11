@@ -13,6 +13,13 @@ function example() {
   var b = 2;
   var c = a + b;
   var d = c + 1;
-  var e = 
+  var e = d + a;
+  return e;
 }
+```
+
+Yes: 数据只是用一次或不适用就无需装到变量中
+
+```js
+let 
 ```
