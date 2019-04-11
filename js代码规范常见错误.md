@@ -196,5 +196,14 @@ function plusAbc(a, b, c) {	// 同样输入函数的a,b,c的值, 但函数返回
 No: 传参无说明
 
 ```js
-page.getSVG(api, true, false);/ true和false啥意思，一目不了然
+page.getSVG(api, true, false); // true和false啥意思，一目不了然
+```
+
+Yes: 传参有说明
+
+```js
+page.getSVG({
+  imageApi: api,
+  includePageBackground: true,
+})
 ```
