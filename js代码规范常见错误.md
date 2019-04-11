@@ -389,7 +389,16 @@ class Animal {
 
 class Mammal extend Animal {
   constructor(age, furColor) {
-    
+    super(age)
+    this.furColor = furColor
   }
+  
+  liveBirth() {
+    ...
+  }
+}
+
+class Human extend Mammal {
+  
 }
 ```
