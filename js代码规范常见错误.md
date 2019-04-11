@@ -400,7 +400,14 @@ class Mammal extend Animal {
 
 class Human extend Mammal {
   constructor(age, furColor, languageSpoken) {
-    super(age, furColor)    this.languageSpoken - 
+    super(age, furColor)
+    this.languageSpoken = languageSpoken
+  }
+
+  speak() {
+    ...
   }
 }
 ```
+
+To be continued...
