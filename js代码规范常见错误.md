@@ -138,4 +138,7 @@ if(lastName.length > MIN_NAME_LENGTH) {
   ...
 }
 // 其实在项目中有很多的求值变量, 对于每个求值变量都需要做好兜底.
-let prototypeValue = Object.attr || 0;	// 因为Object.attr有可能为空, 所以需要兜底.
+let prototypeValue = Object.attr || 0;	// 因为Object.attr有可能为空, 所以需要兜底.但是变量赋值就不需要兜底了.
+let a = 2;
+let myName = 'Tiny';
+```
