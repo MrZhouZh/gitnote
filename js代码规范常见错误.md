@@ -213,3 +213,15 @@ page.getSVG({
 
 No: 无法识别函数的意图
 
+```js
+function emlu(user) {
+ ...
+}
+```
+
+Yes: 动词开头, 意图明显
+
+```js
+function send
+
+```
