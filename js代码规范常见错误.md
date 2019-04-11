@@ -119,4 +119,9 @@ Yes: 少用或使用替代方案,你可以选择只用局部变量.通过(){}方
 
 (6)变量赋值
 
-No: 对于
+No: 对于求值获取的变量, 没有兜底.
+
+```js
+const MIN_NAME_LENGTH = 8;
+let lastName = fullName[1];
+```
