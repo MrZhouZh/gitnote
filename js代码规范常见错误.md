@@ -71,7 +71,11 @@ Yes: 添加变量
 
 ```js
 const MAX_INPUT_LENGTH = 8;
-if(value.length < MAX_INPUT_LENGTH) {
+if(value.length < MAX_INPUT_LENGTH) {	// 限定最大输入长度
   ...
 }
 ```
+
+(4)使用说明性的变量(即有意义的变量名)
+
+No: 
