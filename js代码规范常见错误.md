@@ -34,5 +34,7 @@ function example() {
 NO: 自我感觉良好的缩写
 
 ```js
-let fName = 'jac';  // 看起来命名规范, 缩写,驼峰命名, eslint各种检测工具都能通过, 但是fName 
+let fName = 'jac';  // 看起来命名规范, 缩写,驼峰命名, eslint各种检测工具都能通过, 但是fName 是个什么? 这时候你就想说, What are you 弄啥嘞
 ```
+
+Yes: 
