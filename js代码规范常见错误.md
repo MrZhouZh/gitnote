@@ -234,5 +234,9 @@ function sendEmailToUser(user) {
 No: 函数功能混乱, 一个函数包含多个功能.最后就像能以一当百的老师傅(老程序猿)一样, 被乱拳(功能复杂函数)打死
 
 ```js
-function 
+function sendEmailToClients(clients) {
+  clients.forEach(client => {
+    const clientRecord = database.lookup(client);
+  })
+}
 ```
