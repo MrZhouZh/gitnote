@@ -288,5 +288,17 @@ if(a === 1) {
 }
 ```
 
-Yes: 可以使用 `switch` 替代
+Yes: 可以使用 `switch` 替代或用数组替代
+
+```js
+switch(a) {
+  case 1:
+    ...
+  case 2:
+    ...
+  case 3:
+    ...
+  de
+}
+```
 
