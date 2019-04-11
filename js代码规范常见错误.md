@@ -366,3 +366,10 @@ let fullName = ['jack', 'willen'];
 let [firstName, lastName] = fullName;
 ```
 
+(4) 尽量使用类`class`
+
+No: 采用传统的函数原型链实现继承
+
+```js
+典型的 ES5
+```
