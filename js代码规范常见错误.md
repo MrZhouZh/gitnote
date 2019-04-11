@@ -126,4 +126,10 @@ const MIN_NAME_LENGTH = 8;
 let lastName = fullName[1];
 if(lastName.length > MIN_NAME_LENGTH) {	// 这样你就成功的给自己挖了一个坑,你有考虑如果fullName = ['jack']这样的情况吗?这种程序一跑起来就要炸~
   ...
+}
 ```
+
+Yes: 对于求值变量, 做好兜底
+
+```js
+const 
