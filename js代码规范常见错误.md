@@ -84,7 +84,7 @@ No: 长代码不知道啥意思
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegx = /^[^,\]+[,\s]+(.+?)s*(d{5})?$/;
 saveCityZipCode(
-  address.match(cityZipCodeRegx)[1],
-
+  address.match(cityZipCodeRegx)[1], // 这个公式要做什么用??原作者已离职.自己看代码
+  address.match(cityZipCodeRegx)[2]
 )
 ```
