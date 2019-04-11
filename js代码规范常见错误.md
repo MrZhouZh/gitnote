@@ -110,5 +110,5 @@ window.name = 'a';
 window.name = 'b';
 
 // time.js
-window.name= 'c'; // 三个文件的加载顺序都会导致输出的结果不同
+window.name= 'c'; // 三个文件的加载顺序会导致输出的结果不同.同时, 你对window.name的修改了都有可能不生效, 因为你不知道你修改过之后别人
 ```
