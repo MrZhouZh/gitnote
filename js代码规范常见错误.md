@@ -247,7 +247,7 @@ function sendEmailToClients(clients) {
 Yes: 功能拆解
 
 ```js
-function sendEmailToActiveClients(clients) {
+function sendEmailToActiveClients(clients) {	// 拆解利于维护和复用
   clients.filter(isActiveClient).forEach(email);
 }
 function isActiveClient(client) {
@@ -255,3 +255,7 @@ function isActiveClient(client) {
   return clientRecord.isActive();
 }
 ```
+
+(6) 优先使用函数式编程
+
+NO: 使用`for`
