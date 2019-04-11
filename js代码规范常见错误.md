@@ -204,6 +204,12 @@ Yes: 传参有说明
 ```js
 page.getSVG({
   imageApi: api,
-  includePageBackground: true,
+  includePageBackground: true,  // 一目了然，知道这些true和false是啥意思
+  compress: false
 })
 ```
+
+(4)动作函数要以动词开头
+
+No: 无法识别函数的意图
+
