@@ -342,5 +342,13 @@ Yes: 使用模板字符
 let message = `Hello ${name}, it's ${time} now.`
 ```
 
+(3) 使用解构赋值
 
+No: 采用传统赋值
+
+```js
+var data = { name: 'dys', age: 1 };
+
+
+```
 
