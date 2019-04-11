@@ -57,4 +57,10 @@ let name;
 let users;
 ```
 
-(3)特定
+(3)特定的变量
+
+No: 无说明的参数
+
+```js
+if(value.length < 8) { // 为什么要小于8
+```
