@@ -268,4 +268,9 @@ for(var i = 0; i <= 10; i++) {	// 一看到for循环让人顿生不想看的情�
 
 Yes: 使用函数式编程
 
-let b = a.map(item => ++item)	// 现在javascript中几乎
+```js
+let b = a.map(item => ++item)	// 现在javascript中几乎所有的for循环都可以被 map, filter, find, some, any, forEach等函数式编程取代
+```
+
+()
+
