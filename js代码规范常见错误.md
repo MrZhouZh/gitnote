@@ -333,7 +333,9 @@ let foo = () => { ... }
 No: 采用传统 `+` 号
 
 ```js
-
+var message = 'Hello ' + name + ', it\'s ' + time + ' now.'
 ```
+
+Yes: 
 
 
