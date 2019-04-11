@@ -359,8 +359,10 @@ var lastName = fullName[1];
 Yes: 使用解构赋值
 
 ```js
-var data = { name: 'dys', age: 1 };
-var [name, age] = data.name;
-var age = data.age;
+let data = { name: 'dys', age: 1 };
+let {name, age} = data;
+
+let fullName = ['jack', 'willen'];
+let [firstName, lastName] = fullName;
 ```
 
